@@ -21,28 +21,47 @@ function App() {
   };
 
   const getBathrooms = () => {
-    return bathroom.map((toilet) => {
+    return bathroom.map((toilet, index) => {
       return (
-        <ul>
-          <li>{toilet.name}</li>
-          <li>{toilet.state},</li>
-          <li>{toilet.city}</li>
-          <li>{toilet.directions}</li>
-        </ul>
+        <div key={index} className="container">
+          <div className="name">
+            {toilet.name}
+            <div>
+              <i class="fas fa-toilet fa-2x"></i>
+            </div>
+          </div>
+          <div className="directions">{toilet.directions}</div>
+          <div className="location">
+            {toilet.state},{toilet.city}
+            <div className="access">
+              <i className="fa fa-wheelchair fa-2x"></i>
+            </div>
+          </div>
+        </div>
       );
     });
   };
 
   return (
     <div className="App">
-      <h1>Bathroom Finder</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter City To Find Bathroom"
-          onChange={handleChange}
-        />
-      </form>
+      <header>
+        <h1>Bathroom Finder</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <div className="form-outline">
+              <input
+                type="search"
+                id="form1"
+                className="form-control"
+                onChange={handleChange}
+              />
+            </div>
+            <button type="button" className="btn btn-primary">
+              <i className="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </header>
       {getBathrooms()}
     </div>
   );

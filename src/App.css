@@ -1,9 +1,21 @@
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
-ul {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  list-style: none;
+.form-outline input {
+  border: 1px solid !important;
+}
+.input-group {
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 25px;
+  border-bottom: 1px solid;
 }
